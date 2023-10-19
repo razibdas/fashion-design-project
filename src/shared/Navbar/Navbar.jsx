@@ -24,7 +24,7 @@ const Navbar = () => {
         <li className="mr-2 rounded-lg text-white">
             <NavLink to="/" className="home-link">Home</NavLink>
         </li>
-        <li className="mr-2 rounded-lg text-white"><NavLink to="/about">Product Add</NavLink></li>
+        <li className="mr-2 rounded-lg text-white"><NavLink to="/addproduct">Product Add</NavLink></li>
         <li className="mr-2  rounded-lg text-white"><NavLink to="/login">Login</NavLink></li>
 
     </>
