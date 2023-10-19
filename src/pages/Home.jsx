@@ -1,5 +1,8 @@
 import Banner from "../shared/Banner/Banner";
+import BestFashion from "./BestFashion";
+import Footer from "./Footer";
 import NewCollection from "./NewCollection";
+import OurProduct from "./OurProduct";
 
 
 
@@ -8,6 +11,9 @@ const Home = () => {
         <div className="text-center">
             <Banner></Banner>
             <NewCollection></NewCollection>
+            <BestFashion></BestFashion>
+            <OurProduct></OurProduct>
+            <Footer></Footer>
         </div>
     );
 };

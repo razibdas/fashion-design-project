@@ -7,6 +7,7 @@ import { AuthContext } from "../provider/AuthProvider";
 import Navbar from "../shared/Navbar/Navbar";
 
 import { FcGoogle } from 'react-icons/fc';
+import Footer from "./Footer";
 
 
 
@@ -93,8 +94,11 @@ const Login = () => {
                 {success && <p className='text-green-500'>{success}</p>}
 
             </div>
-        </div>
+            <div className="pt-32">
+                <Footer></Footer>
 
+            </div>
+        </div>
     );
 };
 

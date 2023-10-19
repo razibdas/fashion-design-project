@@ -7,6 +7,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import Swal from 'sweetalert2'
 import Navbar from '../shared/Navbar/Navbar';
 import { AuthContext } from '../provider/AuthProvider';
+import Footer from './Footer';
 
 const Register = () => {
     const [registerError, setRegisterError] = useState('');
@@ -104,6 +105,10 @@ const Register = () => {
                     {success && <p className='text-green-500'>{success}</p>}
                     
                 </div>
+            </div>
+            <div className="pt-56">
+                <Footer></Footer>
+
             </div>
         </div>
     );
