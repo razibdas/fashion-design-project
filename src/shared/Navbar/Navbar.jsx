@@ -1,11 +1,13 @@
 import { Link, NavLink } from "react-router-dom";
 // import defaultUserPhoto from '../../assets/user.png'
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../provider/AuthProvider";
 
 
 
 const Navbar = () => {
+
+    const { theme, setTheme } = useState("light")
 
     const { user, logOut } = useContext(AuthContext);
 
@@ -18,6 +20,19 @@ const Navbar = () => {
             .catch()
     }
 
+    useEffect(() => {
+        if (theme === "dark") {
+            document.documentElement.classList.add("dark");
+        }
+        else {
+            document.documentElement.classList.remove("dark")
+        }
+    }, [theme])
+
+    const handleThemeSwitch = () => {
+        setTheme(theme === "dark" ? "Light" : "dark")
+    }
+
 
 
     const navLinks = <>
@@ -26,6 +41,10 @@ const Navbar = () => {
         </li>
         <li className="mr-2 rounded-lg text-white"><NavLink to="/addproduct">Product Add</NavLink></li>
         <li className="mr-2  rounded-lg text-white"><NavLink to="/login">Login</NavLink></li>
+
+        <li className="mr-2 rounded-lg text-white">
+            <NavLink onClick={handleThemeSwitch} to="/" className="home-link">DarkMode</NavLink>
+        </li>
 
     </>
 
@@ -42,7 +61,7 @@ const Navbar = () => {
                         {navLinks}
                     </ul>
                 </div>
-                <img className="w-[60px] h-[60px]" src="https://i.ibb.co/bJsJBJb/Pngtree-orange-fashion-women-boutique-clothing-5069976.jpg" alt="" />
+                <img className="ml-2 w-[60px] h-[60px]" src="https://i.ibb.co/bJsJBJb/Pngtree-orange-fashion-women-boutique-clothing-5069976.jpg" alt="" />
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -60,7 +79,15 @@ const Navbar = () => {
                                 className="btn btn-ghost btn-circle avatar ml-12"
                             >
                                 <div className="w-10 rounded-full">
-                                    {user && <img src={user?.photoURL} />}
+                                    {/* {user && <img src={user?.photoURL} />} */}
+                                    <img
+                                        className="w-10 rounded-full"
+                                        src={user?.photoURL}
+                                        alt="User Profile"
+                                        onError={(e) => {
+                                            e.target.src = defaultUserPhoto; 
+                                        }}
+                                    />
                                 </div>
                             </label>
                             <ul

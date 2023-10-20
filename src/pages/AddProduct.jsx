@@ -3,6 +3,23 @@ import Footer from "./Footer";
 
 
 const AddProduct = () => {
+
+    const handleAddProduct = event =>{
+        event.preventDefault();
+
+        const form = event.target;
+
+        const name = form.name.value;
+        const brand = form.brand.value;
+        const category = form.category.value;
+        const price = form.price.value;
+        const PhotoUrl = form.photo.value;
+        const description = form.description.value;
+
+        const newProduct = {name, brand, category, price, PhotoUrl, description};
+        console.log(newProduct);
+
+    }
     return (
         <div >
             <Navbar></Navbar>
@@ -10,7 +27,7 @@ const AddProduct = () => {
                 <h2 className="text-3xl font-bold text-center">Add New Product</h2>
                 <p className="text-center mt-4">
                     Discover an exceptional new product, a testament to cutting-edge design and user experience. Elevate your lifestyle with this remarkable addition!</p>
-                <form className="mt-6">
+                <form onSubmit={handleAddProduct} className="mt-6">
                     <div className="md:flex mb-6">
                         <div className="form-control md:w-1/2">
                             <label className="label">
@@ -53,7 +70,7 @@ const AddProduct = () => {
                                 <span className="label-text">Photo URL</span>
                             </label>
                             <label className="input-group">
-                                <input type="text" name="Photo URL" placeholder="Photo URL" className="input input-bordered w-full" />
+                                <input type="text" name="photo" placeholder="Photo URL" className="input input-bordered w-full" />
                             </label>
                         </div>
 

@@ -10,7 +10,7 @@ const Banner = () => {
       <img
         src="https://i.ibb.co/VN1y0Yn/stylish-happy-girl-shopping-portrait-modern-woman-with-shop-bag-laughing-smiling-satisfied.jpg"
         alt="image 1"
-        style={{ height: '80vh' }}
+        style={{ height: '90vh' }}
         className="  w-full object-cover"
       />
       <div className="absolute inset-0  h-full w-full place-items-center bg-black/75 ">
