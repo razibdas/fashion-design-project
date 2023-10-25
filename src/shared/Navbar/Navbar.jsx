@@ -30,8 +30,9 @@ const Navbar = () => {
     }, [theme])
 
     const handleThemeSwitch = () => {
-        setTheme(theme === "dark" ? "Light" : "dark")
+        setTheme(theme === "dark" ? "light" : "dark"); // Corrected "Light" to "light"
     }
+    
 
 
 
@@ -42,8 +43,8 @@ const Navbar = () => {
         <li className="mr-2 rounded-lg text-white"><NavLink to="/addproduct">Product Add</NavLink></li>
         <li className="mr-2  rounded-lg text-white"><NavLink to="/login">Login</NavLink></li>
 
-        <li className="mr-2 rounded-lg text-white">
-            <NavLink onClick={handleThemeSwitch} to="/" className="home-link">DarkMode</NavLink>
+        <li  className="mr-2 rounded-lg text-white">
+            <NavLink to='/'  onClick={handleThemeSwitch} className="home-link">DarkMode</NavLink>
         </li>
 
     </>
