@@ -80,7 +80,7 @@ import React from 'react';
 const NewCollection = () => {
     return (
         <div>
-            <h2 className="text-3xl font-bold">This is new Collection</h2>
+           
         </div>
     );
 };

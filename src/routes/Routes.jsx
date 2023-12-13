@@ -5,6 +5,7 @@ import Login from "../pages/Login";
 import Register from "../pages/Register";
 import ErrorPage from "../ErrorPage/ErrorPage";
 import AddProduct from "../pages/AddProduct";
+import AllFashionCards from "../pages/AllFashionCards";
 
 
 
@@ -18,7 +19,7 @@ const routes = createBrowserRouter([
             {
                 path: '/',
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:5001/newBrands')
+                loader: () => fetch('https://fashion-design-project-server.vercel.app/newBrands')
             },
             {
                 path: '/login',
@@ -31,6 +32,11 @@ const routes = createBrowserRouter([
             {
                 path: '/addproduct',
                 element: <AddProduct></AddProduct>
+            },
+            {
+                path: '/allFashionBrands/:brandName',
+                element: <AllFashionCards></AllFashionCards>,
+                loader: () => fetch('https://fashion-design-project-server.vercel.app/allFashionBrands')
             }
         ]
     }

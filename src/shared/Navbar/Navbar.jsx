@@ -7,7 +7,7 @@ import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
 
-    const { theme, setTheme } = useState("light")
+    const [ theme, setTheme ] = useState("light")
 
     const { user, logOut } = useContext(AuthContext);
 
@@ -30,7 +30,8 @@ const Navbar = () => {
     }, [theme])
 
     const handleThemeSwitch = () => {
-        setTheme(theme === "dark" ? "light" : "dark"); // Corrected "Light" to "light"
+        setTheme(theme === "dark" ? "light" : "dark"); 
+        console.log("darkMode");
     }
     
 
@@ -43,8 +44,8 @@ const Navbar = () => {
         <li className="mr-2 rounded-lg text-white"><NavLink to="/addproduct">Product Add</NavLink></li>
         <li className="mr-2  rounded-lg text-white"><NavLink to="/login">Login</NavLink></li>
 
-        <li  className="mr-2 rounded-lg text-white">
-            <NavLink to='/'  onClick={handleThemeSwitch} className="home-link">DarkMode</NavLink>
+        <li onClick={handleThemeSwitch}  className="mr-2 rounded-lg text-white">
+            <NavLink to='/'   className="home-link">DarkMode</NavLink>
         </li>
 
     </>

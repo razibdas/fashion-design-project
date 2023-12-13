@@ -1,18 +1,20 @@
+import { Link } from "react-router-dom";
 
-const FashionCard = ({fashion}) => {
+const FashionCard = ({ fashion }) => {
     console.log(fashion);
-    const {id, brandName, image} = fashion;
+    const { id, brandName, image } = fashion;
     return (
-        <div className="card card-compact  bg-base-100 shadow-xl">
-            <figure><img src={image} alt="Shoes" /></figure>
-            <div className="card-body">
-                <h2 className="card-title">{brandName}</h2>
-                <p>If a dog chews shoes whose shoes does he choose?</p>
-                <div className="card-actions justify-end">
-                    <button className="btn btn-primary">Buy Now</button>
+        <>
+            <Link to={`/allFashionBrands/${brandName}`}>
+                <div className="card w-full card-compact  bg-base-100 shadow-xl">
+                    <figure><img className="w-[200px] h-[200px] " src={image} alt="Shoes" /></figure>
+                    <div className="card-body">
+                        <h2 className="card-title text-4xl justify-center">{brandName}</h2>
+
+                    </div>
                 </div>
-            </div>
-        </div>
+            </Link>
+        </>
     );
 };
 
